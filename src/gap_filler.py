@@ -15,37 +15,61 @@ def gapfinder(txt, removal_proportion=7):
     low = []
     
     for token in doc:
-        if token.tag_ == "NN":
+        if token.tag_ == "CC":
             if random.randrange(1,100) <= removal_proportion:
                 txt = txt.replace(token.text, "__________", 1)
                 low.append(token.text)
-        elif token.tag_ == "NNS":
+        elif token.tag_ == "DT":
             if random.randrange(1,100) <= removal_proportion:
                 txt = txt.replace(token.text, "__________", 1)
                 low.append(token.text)
-        elif token.tag_ == "JJ":
+        elif token.tag_ == "EX":
             if random.randrange(1,100) <= removal_proportion:
                 txt = txt.replace(token.text, "__________", 1)
                 low.append(token.text)
-        elif token.tag_ == "JJR":
+        elif token.tag_ == "IN":
             if random.randrange(1,100) <= removal_proportion:
                 txt = txt.replace(token.text, "__________", 1)
                 low.append(token.text)
-        elif token.tag_ == "JJS":
+        elif token.tag_ == "MD":
+            if random.randrange(1,100) <= removal_proportion:
+                txt = txt.replace(token.text, "__________", 1)
+                low.append(token.text)
+        elif token.tag_ == "PDT":
+            if random.randrange(1,100) <= removal_proportion:
+                txt = txt.replace(token.text, "__________", 1)
+                low.append(token.text)
+        elif token.tag_ == "RP":
+            if random.randrange(1,100) <= removal_proportion:
+                txt = txt.replace(token.text, "__________", 1)
+                low.append(token.text)
+        elif token.tag_ == "TO":
+            if random.randrange(1,100) <= removal_proportion:
+                txt = txt.replace(token.text, "__________", 1)
+                low.append(token.text)
+        elif token.tag_ == "WDT":
+            if random.randrange(1,100) <= removal_proportion:
+                txt = txt.replace(token.text, "__________", 1)
+                low.append(token.text)
+        elif token.tag_ == "WP":
+            if random.randrange(1,100) <= removal_proportion:
+                txt = txt.replace(token.text, "__________", 1)
+                low.append(token.text)
+        elif token.tag_ == "WP$":
+            if random.randrange(1,100) <= removal_proportion:
+                txt = txt.replace(token.text, "__________", 1)
+                low.append(token.text)
+        elif token.tag_ == "WRB":
             if random.randrange(1,100) <= removal_proportion:
                 txt = txt.replace(token.text, "__________", 1)
                 low.append(token.text)
                     
-    print("\nRead the below text. What is the gist of the article?\n")
+    print("\nRead the below text and complete each gap with a word that fits.\n")
     
     print(txt)
     
-    print("\nNow, can you complete the gaps with the below ", (len(low)), " words? \n")
-    
     low.sort(key=str.lower)
     
-    for x in low:
-        print(x, '\n')
         
         
     
